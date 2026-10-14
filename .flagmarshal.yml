@@ -5,3 +5,5 @@ flags:
     owner: team-payments
   dark-mode:
     owner: team-web
+  beta-banner:
+    owner: team-growth
