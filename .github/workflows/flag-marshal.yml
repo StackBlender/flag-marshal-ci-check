@@ -1,0 +1,17 @@
+name: Flag Marshal
+on: pull_request
+
+jobs:
+  flags:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # history is analysis input, and the base must be present
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npx --yes @stackblender/flag-marshal@0.2 check --changed-since=auto --format=github
+      - run: npx --yes @stackblender/flag-marshal@0.2 scan --changed-since=auto --format=markdown >> "$GITHUB_STEP_SUMMARY"

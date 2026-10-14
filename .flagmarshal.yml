@@ -1,0 +1,7 @@
+policy:
+  requireOwner: true
+flags:
+  checkout-v2:
+    owner: team-payments
+  dark-mode:
+    owner: team-web
