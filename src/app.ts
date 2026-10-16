@@ -9,3 +9,7 @@ export async function useNewCheckout(user: string): Promise<boolean> {
 export async function useDarkMode(user: string): Promise<boolean> {
   return client.variation('dark-mode', { key: user }, false);
 }
+
+export async function useBetaBanner(user: string): Promise<boolean> {
+  return client.variation('beta-banner', { key: user }, false);
+}
